@@ -11,7 +11,8 @@ adjective = input("Enter an adjective (e.g., scary, funny, tiny): ")
 verb_1 = input("Enter a verb (e.g., running, jumping, dancing): ")
 animal = input("Enter an animal (e.g., cat, dragon, penguin): ")
 exclamation = input("Enter an exclamation word (e.g., Help, Wow, Oh no): ")
-verb_2 = input("Enter another verb (e.g., scream, laugh, hide): ")
+verb_2 = input("Enter another" \
+" verb (e.g., scream, laugh, hide): ")
 verb_3 = input("Enter one more verb (e.g., explode, sing, vanish): ")
 
 # Create the story by combining the user inputs with the template
