@@ -6,3 +6,10 @@ for i in word:
     print("_", end="") #end="" means that the next print statement will be printed on the same line
   else:
     print(i.lower(), end="")
+
+
+
+# word = "Brigham Young"
+# number = len(word)
+
+# print(number)
