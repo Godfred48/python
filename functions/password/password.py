@@ -65,20 +65,21 @@ def main():
             print("Thank you for using the password strength checker. Later!")
             break
         else :
+            strength = password_strength(password)
             toppassword = word_in_file(password, "toppasswords.txt")
             wordlist = word_in_file(password, "wordlist.txt")
             if toppassword == True:
-                print("This password is too common. Please choose a different one.")
+                strength = 0
+                print(f"Password score is {strength} (Too common). Please choose a different one.")
             elif wordlist == True:
-                print("This password is a dictionary word. Please choose a different one.")
+                print(f"Password score is {strength} (Dictionary word). Please choose a different one.")
             else:
-                strength = password_strength(password)
                 if strength < 3:
-                    print(f"This password score is {strength} (Weak). Please choose a different one.")
+                    print(f"Password score is {strength} (Weak). Please choose a different one.")
                 elif strength == 3:
-                    print(f"This password score is {strength} (Moderate). Consider making it stronger.")
+                    print(f"Password score is {strength} (Moderate). Consider making it stronger.")
                 else:
-                    print(f"This password score is {strength} (Strong).")
+                    print(f"Password score is {strength} (Strong).")
 
 
 if __name__ == "__main__":
