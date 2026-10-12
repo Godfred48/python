@@ -8,7 +8,6 @@ def test_extract_city():
     assert extract_city("Diabase Street, Accra,GA 0233") == "Accra"
 
 
-
 def test_extract_state():
     state = extract_state("525 S Center St, Rexburg, ID 83460")
     assert isinstance(state, str), "making sure the value retruned is a string"
