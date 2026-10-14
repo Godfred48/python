@@ -6,6 +6,7 @@ HDPE_SDR11_FRICTION_FACTOR = 0.018   # (unitless)
 HOUSEHOLD_VELOCITY = 1.75            # (meters / second)
 WATER_DENSITY=998.2                  # density of water (998.2 kilogram / meter^3)
 GRAVITY =  9.80665
+DYNAMIC_VISCOSITY_OF_WATER = 0.0010016
 
 def main():
     tower_height = float(input("Height of water tower (meters): "))
@@ -53,8 +54,10 @@ def pressure_loss_from_fittings(fluid_velocity, quantity_fittings):
     return -.04 * WATER_DENSITY * fluid_velocity * 2 * quantity_fittings / 2000
 
 def reynolds_number(hydraulic_diameter, fluid_velocity):
-      #TODO: Need to implement
-      return 0
+    #   #TODO: Need to implement
+    #   return 0
+    reynolds = WATER_DENSITY * hydraulic_diameter * fluid_velocity / DYNAMIC_VISCOSITY_OF_WATER
+    return reynolds
 
 def pressure_loss_from_pipe_reduction(larger_diameter, fluid_velocity, reynolds_number, smaller_diameter):
     k=(.1 + 50 / reynolds_number) * ((larger_diameter / smaller_diameter) ** 4 + 1)
