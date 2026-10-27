@@ -33,6 +33,11 @@ def main():
         grade = get_grade(average)
         grades[key] = grade
 
+    #adding new student 
+    scores["Abena"] = [77, 81, 69]
+    averages["Abena"] = round(sum(scores["Abena"])/len(scores["Abena"]))
+    grades["Abena"] = get_grade(averages["Abena"])
+
     print(grades)  
     print(averages)
     print(f"The higest average score is {score} by {student}")
