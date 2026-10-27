@@ -11,13 +11,29 @@ scores = {
     "Yaw": [45, 58, 50],
 }
 averages = {}
+grades = {}
+
+def get_grade(avg):
+    if avg >= 80:
+        return "A"
+    elif avg >= 70:
+        return "B"
+    elif avg >= 60:
+        return "C"
+    else:
+        return "F"
 
 def main():
     for key, value in scores.items():
-        average = max(value)/len(value)#find average
+        average = sum(value)/len(value)#find average
         averages[key] = round(average, 1) # average and key inserted into average dict
         student = max(averages, key=averages.get) #get student with max average 
         score = averages[student] #retieve the score
+
+        grade = get_grade(average)
+        grades[key] = grade
+
+    print(grades)  
     print(averages)
     print(f"The higest average score is {score} by {student}")
 
