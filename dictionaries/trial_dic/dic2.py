@@ -8,18 +8,25 @@ for word in word_list:
         word_count[word] += 1
     else:
         word_count[word] = 1
-print("="*50)
-print(word_count)
-print("="*50)
+
 
 max_word = max(word_count, key=word_count.get)
 times = word_count[max_word]
 
+#word pe length
+for key, value in word_count.items():
+    length = len(key)
+    word_lengths[key]=length
+
 print("="*50)
 print(word_count)
 print("="*50)
+print("="*50)
+print(word_lengths)
+print("="*50)
 print(f"The most occuring word is '{max_word}' ,Which appeared '{times}' times")
 print ("="*50)
+
 
 
 
