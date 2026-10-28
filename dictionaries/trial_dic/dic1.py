@@ -35,7 +35,7 @@ def main():
 
     #adding new student 
     scores["Abena"] = [77, 81, 69]
-    averages["Abena"] = round(sum(scores["Abena"])/len(scores["Abena"]))
+    averages["Abena"] = round(sum(scores["Abena"])/len(scores["Abena"]), 1)
     grades["Abena"] = get_grade(averages["Abena"])
 
     print(grades)  
